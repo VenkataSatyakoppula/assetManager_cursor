@@ -63,7 +63,16 @@ def initialize_dropdown_options():
                 {"category": "asset_type", "value": "Mobile"},
                 {"category": "os", "value": "Windows 10"},
                 {"category": "os", "value": "Windows 11"},
-                {"category": "company", "value": "Default Company"}
+                {"category": "company", "value": "IMAR"},
+                {"category": "company", "value": "LANDWORX GEC"},
+                {"category": "company", "value": "AL-DHOW"},
+                {"category": "company", "value": "ID-STUDIO"},
+                {"category": "company", "value": "BLINQTECHS"},
+                {"category": "company", "value": "LAVAJET"},
+                {"category": "company", "value": "ECOVERTFM"},
+                {"category": "company", "value": "INTHRA"},
+                {"category": "company", "value": "WESTORE"},
+                {"category": "company", "value": "CMTC"}
             ]
 
             for option in default_options:
