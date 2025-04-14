@@ -12,18 +12,20 @@ if %ERRORLEVEL% neq 0 (
     exit /b 1
 )
 
-REM Clone the repository if not already cloned
-if not exist ".git" (
-    echo Cloning repository...
-    git clone %GIT_REPO_URL% .
-    if %ERRORLEVEL% neq 0 (
-        echo Failed to clone repository. Please check your internet connection and try again.
-        pause
-        exit /b 1
-    )
-    echo Repository cloned successfully.
+REM Check if we're in a Git repository
+git status >nul 2>nul
+if %ERRORLEVEL% neq 0 (
+    echo Initializing Git repository...
+    git init
+    git remote add origin %GIT_REPO_URL%
+    git fetch origin
+    git reset --hard origin/master
+    echo Repository initialized successfully.
 ) else (
-    echo Repository already exists.
+    echo Git repository already exists. Checking for updates...
+    git fetch origin
+    git reset --hard origin/master
+    echo Repository updated successfully.
 )
 
 echo Checking for Python virtual environment...
