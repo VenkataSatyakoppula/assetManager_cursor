@@ -27,7 +27,7 @@ A web-based asset management system for tracking company assets and employees.
    ```
 5. Run the development server:
    ```bash
-   python run.bat
+   ./run.bat
    ```
 
 ## Building for Production
